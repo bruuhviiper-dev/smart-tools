@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -85,6 +86,21 @@ class SettingsScreen extends StatelessWidget {
                     'https://play.google.com/store/apps/details?id=com.smarttoolbox.tools'),
                 mode: LaunchMode.externalApplication),
           ),
+          // Apenas em debug: liberar Pro para testar recursos pagos.
+          if (kDebugMode && !s.isPro)
+            ListTile(
+              leading: const Icon(Icons.bug_report_rounded),
+              title: const Text('[debug] Unlock Pro'),
+              onTap: () => context.read<AppState>().grantPro(),
+            ),
+          // Apenas em debug: trocar idioma para capturar prints da loja.
+          if (kDebugMode)
+            ListTile(
+              leading: const Icon(Icons.translate_rounded),
+              title: Text('[debug] Lang: '
+                  '${s.debugLocale?.languageCode ?? "device"}'),
+              onTap: () => context.read<AppState>().cycleDebugLocale(T.locales),
+            ),
         ],
       ),
     );

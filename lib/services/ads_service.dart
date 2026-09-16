@@ -1,20 +1,26 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-/// AdMob: banner + premiado. EM TESTE — trocar os IDs reais e `_useTestAds=false`
-/// antes de publicar (e pôr o App ID no AndroidManifest).
+/// AdMob: banner + premiado (IDs REAIS de produção).
+/// App ID (no AndroidManifest): ca-app-pub-5880219350817278~8076477663
 class AdsService {
   AdsService._();
   static final AdsService instance = AdsService._();
 
-  static const bool _useTestAds = true;
+  // Produção. Em debug, os dispositivos de teste abaixo recebem anúncios de
+  // teste através destes mesmos IDs — protege a conta de tráfego inválido.
+  static const bool _useTestAds = false;
   static const _testBanner = 'ca-app-pub-3940256099942544/6300978111';
   static const _testRewarded = 'ca-app-pub-3940256099942544/5224354917';
-  static const _realBanner = 'ca-app-pub-0000000000000000/0000000000';
-  static const _realRewarded = 'ca-app-pub-0000000000000000/0000000000';
+  static const _realBanner = 'ca-app-pub-5880219350817278/4137232652';
+  static const _realRewarded = 'ca-app-pub-5880219350817278/6819236312';
   static bool _ph(String id) => id.contains('0000000000');
+
+  /// IDs de dispositivo de teste (hash do logcat). Só usados em debug.
+  static const List<String> _testDeviceIds = ['B3EEABB8EE11C2BE770B684D95219ECB'];
 
   bool _init = false;
   bool get _supported => Platform.isAndroid || Platform.isIOS;
@@ -27,6 +33,10 @@ class AdsService {
   void init() {
     if (_init || !_supported) return;
     _init = true;
+    if (kDebugMode) {
+      MobileAds.instance.updateRequestConfiguration(
+          RequestConfiguration(testDeviceIds: _testDeviceIds));
+    }
     MobileAds.instance.initialize();
   }
 

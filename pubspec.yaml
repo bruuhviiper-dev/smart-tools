@@ -76,6 +76,24 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  assets:
+    - assets/icon/
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/icon/ic_full.png"
+  adaptive_icon_background: "#5B4BF5"
+  adaptive_icon_foreground: "assets/icon/ic_foreground.png"
+  min_sdk_android: 23
+
+flutter_native_splash:
+  color: "#5B4BF5"
+  image: assets/icon/ic_splash.png
+  android_12:
+    color: "#5B4BF5"
+    image: assets/icon/ic_splash.png
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

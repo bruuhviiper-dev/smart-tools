@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 import '../data/units.dart';
@@ -68,19 +69,21 @@ class _ConverterToolState extends State<ConverterTool> {
     }
   }
 
-  String get _result {
+  double get _outValue {
     final v = double.tryParse(_c.text.replaceAll(',', '.')) ?? 0;
-    double out;
     if (_cat == 'Temperature') {
-      out = _fromBaseTemp(_toBaseTemp(v, _from), _to);
-    } else {
-      final units = _cats[_cat]!;
-      out = v * units[_from]! / units[_to]!;
+      return _fromBaseTemp(_toBaseTemp(v, _from), _to);
     }
-    return out
-        .toStringAsFixed(4)
-        .replaceAll(RegExp(r'0+$'), '')
-        .replaceAll(RegExp(r'\.$'), '');
+    final units = _cats[_cat]!;
+    return v * units[_from]! / units[_to]!;
+  }
+
+  /// Formata o resultado no padrão do idioma (separador decimal/milhar,
+  /// dígitos árabes em ar) — uma "informação local" que o usuário reconhece.
+  String _fmt(BuildContext context, double v) {
+    final locale = Localizations.localeOf(context).toLanguageTag();
+    final f = NumberFormat.decimalPattern(locale)..maximumFractionDigits = 4;
+    return f.format(v);
   }
 
   @override
@@ -128,7 +131,7 @@ class _ConverterToolState extends State<ConverterTool> {
               color: Theme.of(context).colorScheme.primaryContainer,
               borderRadius: BorderRadius.circular(16),
             ),
-            child: Text('$_result $_to',
+            child: Text('${_fmt(context, _outValue)} $_to',
                 style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w900)),
           ),
         ],

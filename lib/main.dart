@@ -50,6 +50,7 @@ class SmartToolsApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: T.locales,
+          locale: s.debugLocale, // só preenchido em debug (prints da loja)
           localeResolutionCallback: (device, supported) {
             if (device != null) {
               for (final sl in supported) {

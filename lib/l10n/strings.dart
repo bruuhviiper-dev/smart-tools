@@ -97,6 +97,7 @@ class T {
   String get save => _('Save', 'حفظ', 'सहेजें', '保存', 'Salvar', 'Guardar');
   String get clear => _('Clear', 'مسح', 'साफ़', '清除', 'Limpar', 'Borrar');
   String get copy => _('Copy', 'نسخ', 'कॉपी', '复制', 'Copiar', 'Copiar');
+  String get open => _('Open', 'فتح', 'खोलें', '打开', 'Abrir', 'Abrir');
   String get copied => _('Copied', 'تم النسخ', 'कॉपी किया', '已复制', 'Copiado', 'Copiado');
   String get share => _('Share', 'مشاركة', 'शेयर', '分享', 'Compartilhar', 'Compartir');
   String get history => _('History', 'السجل', 'इतिहास', '历史', 'Histórico', 'Historial');

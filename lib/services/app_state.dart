@@ -24,6 +24,18 @@ class AppState extends ChangeNotifier {
   String _unitsMode = 'auto'; // auto | metric | imperial
   final Set<String> _entitlements = {};
 
+  /// Só para debug: força o idioma do app (para capturar prints da loja).
+  Locale? debugLocale;
+  void cycleDebugLocale(List<Locale> locales) {
+    if (debugLocale == null) {
+      debugLocale = locales.first;
+    } else {
+      final i = locales.indexWhere((l) => l.languageCode == debugLocale!.languageCode);
+      debugLocale = locales[(i + 1) % locales.length];
+    }
+    notifyListeners();
+  }
+
   bool get isDark => _dark;
   ThemeMode get themeMode => _dark ? ThemeMode.dark : ThemeMode.light;
 

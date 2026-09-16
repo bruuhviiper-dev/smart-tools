@@ -99,7 +99,7 @@ class _QrToolState extends State<QrTool> {
                             onPressed: () => launchUrl(Uri.parse(_value!),
                                 mode: LaunchMode.externalApplication),
                             icon: const Icon(Icons.open_in_new_rounded),
-                            label: const Text('Open'),
+                            label: Text(t.open),
                           ),
                         const Spacer(),
                         IconButton(
