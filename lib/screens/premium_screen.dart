@@ -17,6 +17,23 @@ class _PremiumScreenState extends State<PremiumScreen> {
   String _selected = PurchaseService.yearlyId;
 
   @override
+  void initState() {
+    super.initState();
+    // Rebuild quando os preços reais da Play chegarem.
+    PurchaseService.instance.addListener(_onPrices);
+  }
+
+  @override
+  void dispose() {
+    PurchaseService.instance.removeListener(_onPrices);
+    super.dispose();
+  }
+
+  void _onPrices() {
+    if (mounted) setState(() {});
+  }
+
+  @override
   Widget build(BuildContext context) {
     final t = T.of(context);
     final s = context.watch<AppState>();

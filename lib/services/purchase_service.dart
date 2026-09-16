@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 
 /// Compras do Smart Tools.
@@ -8,7 +9,10 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 ///  • `pro_monthly`  — assinatura mensal (remove anúncios + ferramentas Pro)
 ///  • `pro_yearly`   — assinatura anual (mais barata no ano)
 ///  • `pro_lifetime` — compra única vitalícia (alto valor, sem renovar)
-class PurchaseService {
+///
+/// ChangeNotifier: a paywall atualiza os PREÇOS REAIS localizados da Play
+/// (moeda de cada país) assim que a loja responde.
+class PurchaseService extends ChangeNotifier {
   PurchaseService._();
   static final PurchaseService instance = PurchaseService._();
 
@@ -48,6 +52,7 @@ class PurchaseService {
     for (final p in r.productDetails) {
       _products[p.id] = p;
     }
+    if (_products.isNotEmpty) notifyListeners(); // preços reais chegaram
     await _iap.restorePurchases();
   }
 
