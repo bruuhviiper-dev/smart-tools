@@ -16,9 +16,13 @@ class CurrencyTool extends StatefulWidget {
 }
 
 class _CurrencyToolState extends State<CurrencyTool> {
+  // Moedas validadas contra a API (open.er-api), cobrindo os 6 mercados do app.
   static const _codes = [
-    'USD', 'EUR', 'BRL', 'GBP', 'ARS', 'MXN', 'INR',
-    'CNY', 'JPY', 'AED', 'SAR', 'PTE', 'AOA', 'MZN'
+    'USD', 'EUR', 'GBP', 'BRL', 'INR', 'CNY', 'JPY',
+    'AED', 'SAR', 'QAR', 'KWD', 'EGP', 'MAD',
+    'ARS', 'MXN', 'COP', 'CLP', 'PEN',
+    'HKD', 'TWD', 'CAD', 'AUD', 'TRY', 'ZAR', 'NGN',
+    'AOA', 'MZN'
   ];
   Map<String, double> _rates = {}; // base USD
   String _from = 'USD', _to = 'BRL';
