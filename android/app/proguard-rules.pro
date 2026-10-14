@@ -26,6 +26,16 @@
 # Modelos (de)serializados por reflexão, se houver — mantém anotações
 -keepattributes *Annotation*, Signature, InnerClasses, EnclosingMethod
 
+# WorkManager + Room + App Startup (crash "Failed to create WorkDatabase" com R8)
+-keep class androidx.work.** { *; }
+-keep class androidx.startup.** { *; }
+-keep class androidx.room.** { *; }
+-keep class * extends androidx.room.RoomDatabase { *; }
+-keep class * extends androidx.work.ListenableWorker
+-keep class * extends androidx.work.Worker
+-dontwarn androidx.work.**
+-dontwarn androidx.room.**
+
 # Evita remover métodos nativos
 -keepclasseswithmembernames class * {
     native <methods>;
