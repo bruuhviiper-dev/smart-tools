@@ -91,6 +91,31 @@ class T {
   String get needActivity => _('Activity permission is needed.', 'يلزم إذن النشاط.', 'गतिविधि अनुमति आवश्यक है।', '需要活动权限。', 'É necessária a permissão de atividade física.', 'Se necesita el permiso de actividad.');
   String get screenTestHint => _('Tap a color for fullscreen. Long-press to exit.', 'اضغط على لون لملء الشاشة. اضغط مطولاً للخروج.', 'पूर्ण स्क्रीन के लिए रंग टैप करें। बाहर निकलने के लिए लंबे समय तक दबाएं।', '点击颜色全屏，长按退出。', 'Toque numa cor para tela cheia. Segure para sair.', 'Toca un color para pantalla completa. Mantén pulsado para salir.');
 
+  // --- Ferramentas novas (leva 3) ---
+  String get bmiCalculator => _('BMI Calculator', 'حاسبة كتلة الجسم', 'बीएमआई कैलकुलेटर', 'BMI 计算器', 'Calculadora de IMC', 'Calculadora de IMC');
+  String get inclinometer => _('Inclinometer', 'مقياس الميل', 'इनक्लिनोमीटर', '测斜仪', 'Clinômetro', 'Inclinómetro');
+  String get counter => _('Counter', 'عداد', 'काउंटर', '计数器', 'Contador', 'Contador');
+  String get ageCalculator => _('Age Calculator', 'حاسبة العمر', 'आयु कैलकुलेटर', '年龄计算器', 'Calculadora de Idade', 'Calculadora de Edad');
+  String get dice => _('Dice & Coin', 'النرد والعملة', 'पासा और सिक्का', '骰子和硬币', 'Dado e Moeda', 'Dado y Moneda');
+  String get notepad => _('Notepad', 'مفكرة', 'नोटपैड', '记事本', 'Bloco de Notas', 'Bloc de Notas');
+  String get bmiUnder => _('Underweight', 'نحافة', 'कम वज़न', '偏瘦', 'Abaixo do peso', 'Bajo peso');
+  String get bmiNormal => _('Normal', 'طبيعي', 'सामान्य', '正常', 'Normal', 'Normal');
+  String get bmiOver => _('Overweight', 'زيادة وزن', 'अधिक वज़न', '超重', 'Sobrepeso', 'Sobrepeso');
+  String get bmiObese => _('Obese', 'سمنة', 'मोटापा', '肥胖', 'Obesidade', 'Obesidad');
+  String get height => _('Height', 'الطول', 'ऊंचाई', '身高', 'Altura', 'Altura');
+  String get weight => _('Weight', 'الوزن', 'वज़न', '体重', 'Peso', 'Peso');
+  String get angle => _('Angle', 'الزاوية', 'कोण', '角度', 'Ângulo', 'Ángulo');
+  String get tapToCount => _('Tap anywhere to count', 'اضغط في أي مكان للعد', 'गिनने के लिए कहीं भी टैप करें', '点击任意处计数', 'Toque em qualquer lugar para contar', 'Toca en cualquier lugar para contar');
+  String get birthDate => _('Select birth date', 'اختر تاريخ الميلاد', 'जन्म तिथि चुनें', '选择出生日期', 'Escolher data de nascimento', 'Elegir fecha de nacimiento');
+  String get years => _('years', 'سنة', 'वर्ष', '岁', 'anos', 'años');
+  String get months => _('months', 'شهر', 'माह', '月', 'meses', 'meses');
+  String get days => _('days', 'يوم', 'दिन', '天', 'dias', 'días');
+  String get roll => _('Roll', 'ارمِ', 'रोल', '掷骰', 'Rolar', 'Tirar');
+  String get flip => _('Flip', 'اقلب', 'उछालें', '抛硬币', 'Jogar', 'Lanzar');
+  String get heads => _('Heads', 'صورة', 'हेड', '正面', 'Cara', 'Cara');
+  String get tails => _('Tails', 'كتابة', 'टेल', '反面', 'Coroa', 'Cruz');
+  String get notepadHint => _('Write your notes…', 'اكتب ملاحظاتك…', 'अपने नोट्स लिखें…', '写下你的笔记…', 'Escreva suas notas…', 'Escribe tus notas…');
+
   // ---------------- Conversor: categorias ----------------
   String get convLength => _('Length', 'الطول', 'लंबाई', '长度', 'Comprimento', 'Longitud');
   String get convWeight => _('Weight', 'الوزن', 'वज़न', '重量', 'Peso', 'Peso');

@@ -5,8 +5,14 @@ import 'package:provider/provider.dart';
 import '../data/app_theme.dart';
 import '../l10n/strings.dart';
 import '../services/app_state.dart';
+import '../tools/age_tool.dart';
 import '../tools/altimeter_tool.dart';
 import '../tools/battery_tool.dart';
+import '../tools/bmi_tool.dart';
+import '../tools/counter_tool.dart';
+import '../tools/dice_tool.dart';
+import '../tools/inclinometer_tool.dart';
+import '../tools/notepad_tool.dart';
 import '../tools/calculator_tool.dart';
 import '../tools/color_picker_tool.dart';
 import '../tools/compass_tool.dart';
@@ -55,6 +61,9 @@ class HomeScreen extends StatelessWidget {
         _Tool(Icons.calculate_rounded, t.calculator, 7, () => const CalculatorTool()),
         _Tool(Icons.percent_rounded, t.tipCalculator, 8, () => const TipCalculatorTool()),
         _Tool(Icons.currency_exchange_rounded, t.currencyConverter, 6, () => const CurrencyTool()),
+        _Tool(Icons.monitor_weight_rounded, t.bmiCalculator, 10, () => const BmiTool()),
+        _Tool(Icons.landscape_rounded, t.inclinometer, 3, () => const InclinometerTool()),
+        _Tool(Icons.cake_rounded, t.ageCalculator, 8, () => const AgeTool()),
       ]),
       _Section(t.catSensors, [
         _Tool(Icons.graphic_eq_rounded, t.soundMeter, 10, () => const SoundMeterTool()),
@@ -78,6 +87,9 @@ class HomeScreen extends StatelessWidget {
         _Tool(Icons.palette_rounded, t.colorPicker, 9, () => const ColorPickerTool()),
         _Tool(Icons.music_note_rounded, t.metronome, 10, () => const MetronomeTool()),
         _Tool(Icons.gradient_rounded, t.screenTest, 11, () => const ScreenTestTool()),
+        _Tool(Icons.plus_one_rounded, t.counter, 5, () => const CounterTool()),
+        _Tool(Icons.casino_rounded, t.dice, 1, () => const DiceTool()),
+        _Tool(Icons.sticky_note_2_rounded, t.notepad, 8, () => const NotepadTool()),
       ]),
     ];
 
