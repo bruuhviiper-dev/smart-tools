@@ -8,15 +8,21 @@ import '../services/app_state.dart';
 import '../tools/altimeter_tool.dart';
 import '../tools/battery_tool.dart';
 import '../tools/calculator_tool.dart';
+import '../tools/color_picker_tool.dart';
 import '../tools/compass_tool.dart';
 import '../tools/converter_tool.dart';
+import '../tools/currency_tool.dart';
 import '../tools/flashlight_tool.dart';
 import '../tools/level_tool.dart';
 import '../tools/magnifier_tool.dart';
 import '../tools/metal_detector_tool.dart';
+import '../tools/metronome_tool.dart';
+import '../tools/pedometer_tool.dart';
 import '../tools/plumb_tool.dart';
 import '../tools/protractor_tool.dart';
 import '../tools/qr_generator_tool.dart';
+import '../tools/screen_test_tool.dart';
+import '../tools/tip_calculator_tool.dart';
 import '../tools/qibla_tool.dart';
 import '../tools/qr_tool.dart';
 import '../tools/ruler_tool.dart';
@@ -47,6 +53,8 @@ class HomeScreen extends StatelessWidget {
         _Tool(Icons.explore_rounded, t.compass, 1, () => const CompassTool()),
         _Tool(Icons.swap_horiz_rounded, t.converter, 6, () => const ConverterTool()),
         _Tool(Icons.calculate_rounded, t.calculator, 7, () => const CalculatorTool()),
+        _Tool(Icons.percent_rounded, t.tipCalculator, 8, () => const TipCalculatorTool()),
+        _Tool(Icons.currency_exchange_rounded, t.currencyConverter, 6, () => const CurrencyTool()),
       ]),
       _Section(t.catSensors, [
         _Tool(Icons.graphic_eq_rounded, t.soundMeter, 10, () => const SoundMeterTool()),
@@ -55,6 +63,7 @@ class HomeScreen extends StatelessWidget {
         _Tool(Icons.mosque_rounded, t.qibla, 5, () => const QiblaTool()),
         _Tool(Icons.speed_rounded, t.speedometer, 0, () => const SpeedometerTool()),
         _Tool(Icons.terrain_rounded, t.altimeter, 6, () => const AltimeterTool()),
+        _Tool(Icons.directions_walk_rounded, t.pedometer, 3, () => const PedometerTool()),
       ]),
       _Section(t.catEveryday, [
         _Tool(Icons.flashlight_on_rounded, t.flashlight, 0, () => const FlashlightTool()),
@@ -66,6 +75,9 @@ class HomeScreen extends StatelessWidget {
         _Tool(Icons.flip_camera_ios_rounded, t.mirror, 4, () => const MirrorTool()),
         _Tool(Icons.qr_code_rounded, t.qrGenerator, 7, () => const QrGeneratorTool()),
         _Tool(Icons.public_rounded, t.worldClock, 1, () => const WorldClockTool()),
+        _Tool(Icons.palette_rounded, t.colorPicker, 9, () => const ColorPickerTool()),
+        _Tool(Icons.music_note_rounded, t.metronome, 10, () => const MetronomeTool()),
+        _Tool(Icons.gradient_rounded, t.screenTest, 11, () => const ScreenTestTool()),
       ]),
     ];
 

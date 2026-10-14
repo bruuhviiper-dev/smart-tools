@@ -70,6 +70,27 @@ class T {
   String get qrGenHint => _('Type text or a link…', 'اكتب نصًا أو رابطًا…', 'टेक्स्ट या लिंक लिखें…', '输入文本或链接…', 'Digite um texto ou link…', 'Escribe un texto o enlace…');
   String get qrGenReady => _('QR code ready — screenshot to save', 'رمز QR جاهز — التقط صورة للحفظ', 'क्यूआर तैयार — सेव करने के लिए स्क्रीनशॉट लें', '二维码已就绪，截图保存', 'QR pronto — tire um print para salvar', 'QR listo — haz una captura para guardar');
 
+  // --- Ferramentas novas (leva 2) ---
+  String get currencyConverter => _('Currency', 'محول العملات', 'मुद्रा कन्वर्टर', '货币换算', 'Conversor de Moedas', 'Conversor de Monedas');
+  String get tipCalculator => _('Tip Calculator', 'حاسبة البقشيش', 'टिप कैलकुलेटर', '小费计算器', 'Calculadora de Gorjeta', 'Calculadora de Propinas');
+  String get colorPicker => _('Color Picker', 'منتقي الألوان', 'रंग चयनकर्ता', '取色器', 'Seletor de Cores', 'Selector de Color');
+  String get metronome => _('Metronome', 'مترونوم', 'मेट्रोनोम', '节拍器', 'Metrônomo', 'Metrónomo');
+  String get pedometer => _('Step Counter', 'عداد الخطوات', 'कदम गिनती', '计步器', 'Podômetro', 'Podómetro');
+  String get screenTest => _('Screen Test', 'فحص الشاشة', 'स्क्रीन टेस्ट', '屏幕检测', 'Teste de Tela', 'Prueba de Pantalla');
+  String get bill => _('Bill', 'الفاتورة', 'बिल', '账单', 'Conta', 'Cuenta');
+  String get tip => _('Tip', 'بقشيش', 'टिप', '小费', 'Gorjeta', 'Propina');
+  String get total => _('Total', 'الإجمالي', 'कुल', '总计', 'Total', 'Total');
+  String get perPerson => _('Per person', 'للشخص', 'प्रति व्यक्ति', '每人', 'Por pessoa', 'Por persona');
+  String get people => _('People', 'أشخاص', 'लोग', '人数', 'Pessoas', 'Personas');
+  String get amount => _('Amount', 'المبلغ', 'राशि', '金额', 'Valor', 'Monto');
+  String get updated => _('Updated', 'تم التحديث', 'अपडेट किया गया', '更新于', 'Atualizado', 'Actualizado');
+  String get steps => _('steps', 'خطوات', 'कदम', '步', 'passos', 'pasos');
+  String get goal => _('Goal', 'الهدف', 'लक्ष्य', '目标', 'Meta', 'Meta');
+  String get retry => _('Retry', 'إعادة', 'पुनः', '重试', 'Tentar de novo', 'Reintentar');
+  String get needInternet => _('Internet is needed to update rates.', 'يلزم الإنترنت لتحديث الأسعار.', 'दरें अपडेट करने के लिए इंटरनेट चाहिए।', '需要联网更新汇率。', 'É preciso internet para atualizar as cotações.', 'Se necesita internet para actualizar las tasas.');
+  String get needActivity => _('Activity permission is needed.', 'يلزم إذن النشاط.', 'गतिविधि अनुमति आवश्यक है।', '需要活动权限。', 'É necessária a permissão de atividade física.', 'Se necesita el permiso de actividad.');
+  String get screenTestHint => _('Tap a color for fullscreen. Long-press to exit.', 'اضغط على لون لملء الشاشة. اضغط مطولاً للخروج.', 'पूर्ण स्क्रीन के लिए रंग टैप करें। बाहर निकलने के लिए लंबे समय तक दबाएं।', '点击颜色全屏，长按退出。', 'Toque numa cor para tela cheia. Segure para sair.', 'Toca un color para pantalla completa. Mantén pulsado para salir.');
+
   // ---------------- Conversor: categorias ----------------
   String get convLength => _('Length', 'الطول', 'लंबाई', '长度', 'Comprimento', 'Longitud');
   String get convWeight => _('Weight', 'الوزن', 'वज़न', '重量', 'Peso', 'Peso');
