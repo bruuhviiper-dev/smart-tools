@@ -253,8 +253,8 @@ class T {
   // Benefícios Pro
   String get featNoAds => _('Remove all ads', 'إزالة كل الإعلانات', 'सभी विज्ञापन हटाएँ',
       '去除所有广告', 'Remover todos os anúncios', 'Quitar todos los anuncios');
-  String get featAllTools => _('Unlock every Pro tool', 'فتح كل أدوات برو', 'सभी प्रो टूल अनलॉक',
-      '解锁全部 Pro 工具', 'Desbloquear todas as ferramentas Pro', 'Desbloquea todas las herramientas Pro');
+  String get featAllTools => _('All Pro features, forever', 'كل مزايا برو، للأبد', 'सभी प्रो सुविधाएँ, हमेशा के लिए',
+      '全部 Pro 功能，永久', 'Todos os recursos Pro, para sempre', 'Todas las funciones Pro, para siempre');
   String get featRecord => _('Record & save measurements', 'تسجيل وحفظ القياسات',
       'माप रिकॉर्ड और सहेजें', '记录并保存测量', 'Gravar e salvar medições', 'Graba y guarda mediciones');
   String get featExport => _('Export history (CSV)', 'تصدير السجل (CSV)', 'इतिहास निर्यात (CSV)',

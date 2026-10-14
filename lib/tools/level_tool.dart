@@ -5,6 +5,7 @@ import 'package:sensors_plus/sensors_plus.dart';
 
 import '../data/app_theme.dart';
 import '../l10n/strings.dart';
+import '../screens/premium_screen.dart';
 
 class LevelTool extends StatefulWidget {
   const LevelTool({super.key});
@@ -15,6 +16,7 @@ class LevelTool extends StatefulWidget {
 class _LevelToolState extends State<LevelTool> {
   StreamSubscription? _sub;
   double _x = 0, _y = 0; // -10..10 (m/s²)
+  double _offX = 0, _offY = 0; // calibração (zero) — recurso Pro
 
   @override
   void initState() {
@@ -38,18 +40,35 @@ class _LevelToolState extends State<LevelTool> {
   @override
   Widget build(BuildContext context) {
     final t = T.of(context);
-    final level = _x.abs() < 0.4 && _y.abs() < 0.4;
+    final x = _x - _offX; // leitura calibrada
+    final y = _y - _offY;
+    final level = x.abs() < 0.4 && y.abs() < 0.4;
     return Scaffold(
-      appBar: AppBar(title: Text(t.level)),
+      appBar: AppBar(title: Text(t.level), actions: [
+        IconButton(
+          tooltip: t.calibrate,
+          icon: const Icon(Icons.center_focus_strong_rounded),
+          onPressed: () {
+            // Calibrar (zerar) é um recurso Pro (precisão).
+            if (!requirePro(context)) return;
+            setState(() {
+              _offX = _x;
+              _offY = _y;
+            });
+            ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('${t.calibrate} ✓')));
+          },
+        ),
+      ]),
       body: Center(
         child: LayoutBuilder(builder: (c, box) {
           final r = 130.0;
-          final dx = (-_x / 10 * r).clamp(-r + 22, r - 22);
-          final dy = (_y / 10 * r).clamp(-r + 22, r - 22);
+          final dx = (-x / 10 * r).clamp(-r + 22, r - 22);
+          final dy = (y / 10 * r).clamp(-r + 22, r - 22);
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('${(_x * 4).abs().round()}° / ${(_y * 4).abs().round()}°',
+              Text('${(x * 4).abs().round()}° / ${(y * 4).abs().round()}°',
                   style: const TextStyle(
                       fontSize: 26, fontWeight: FontWeight.w800)),
               const SizedBox(height: 20),

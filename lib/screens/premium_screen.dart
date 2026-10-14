@@ -6,6 +6,15 @@ import '../l10n/strings.dart';
 import '../services/app_state.dart';
 import '../services/purchase_service.dart';
 
+/// Recurso Pro: se o usuário não for Pro, abre a tela de assinatura e devolve
+/// false (quem chamou deve abortar a ação). Se já for Pro, devolve true.
+bool requirePro(BuildContext context) {
+  if (context.read<AppState>().isPro) return true;
+  Navigator.of(context).push(
+      MaterialPageRoute(builder: (_) => const PremiumScreen()));
+  return false;
+}
+
 /// Paywall do Smart Tools Pro: assinatura mensal/anual + vitalício.
 class PremiumScreen extends StatefulWidget {
   const PremiumScreen({super.key});

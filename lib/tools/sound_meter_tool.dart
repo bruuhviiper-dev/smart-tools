@@ -147,7 +147,11 @@ class _SoundViewState extends State<_SoundView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             FilledButton.tonalIcon(
-              onPressed: () => setState(() => _recording = !_recording),
+              onPressed: () {
+                // Iniciar a gravação é um recurso Pro (parar é livre).
+                if (!_recording && !requirePro(context)) return;
+                setState(() => _recording = !_recording);
+              },
               icon: Icon(_recording
                   ? Icons.stop_circle_rounded
                   : Icons.fiber_manual_record_rounded,
