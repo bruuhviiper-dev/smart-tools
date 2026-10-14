@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import '../data/app_theme.dart';
 import '../l10n/strings.dart';
 import '../services/app_state.dart';
+import '../tools/altimeter_tool.dart';
 import '../tools/battery_tool.dart';
 import '../tools/calculator_tool.dart';
 import '../tools/compass_tool.dart';
@@ -13,7 +14,9 @@ import '../tools/flashlight_tool.dart';
 import '../tools/level_tool.dart';
 import '../tools/magnifier_tool.dart';
 import '../tools/metal_detector_tool.dart';
+import '../tools/plumb_tool.dart';
 import '../tools/protractor_tool.dart';
+import '../tools/qr_generator_tool.dart';
 import '../tools/qibla_tool.dart';
 import '../tools/qr_tool.dart';
 import '../tools/ruler_tool.dart';
@@ -22,6 +25,7 @@ import '../tools/speedometer_tool.dart';
 import '../tools/stopwatch_tool.dart';
 import '../tools/timer_tool.dart';
 import '../tools/vibration_tool.dart';
+import '../tools/world_clock_tool.dart';
 import '../widgets/banner_ad.dart';
 import 'premium_screen.dart';
 import 'settings_screen.dart';
@@ -39,6 +43,7 @@ class HomeScreen extends StatelessWidget {
         _Tool(Icons.straighten_rounded, t.ruler, 2, () => const RulerTool()),
         _Tool(Icons.change_history_rounded, t.protractor, 9, () => const ProtractorTool()),
         _Tool(Icons.architecture_rounded, t.level, 3, () => const LevelTool()),
+        _Tool(Icons.vertical_align_center_rounded, t.plumb, 11, () => const PlumbTool()),
         _Tool(Icons.explore_rounded, t.compass, 1, () => const CompassTool()),
         _Tool(Icons.swap_horiz_rounded, t.converter, 6, () => const ConverterTool()),
         _Tool(Icons.calculate_rounded, t.calculator, 7, () => const CalculatorTool()),
@@ -49,6 +54,7 @@ class HomeScreen extends StatelessWidget {
         _Tool(Icons.vibration_rounded, t.vibration, 8, () => const VibrationTool()),
         _Tool(Icons.mosque_rounded, t.qibla, 5, () => const QiblaTool()),
         _Tool(Icons.speed_rounded, t.speedometer, 0, () => const SpeedometerTool()),
+        _Tool(Icons.terrain_rounded, t.altimeter, 6, () => const AltimeterTool()),
       ]),
       _Section(t.catEveryday, [
         _Tool(Icons.flashlight_on_rounded, t.flashlight, 0, () => const FlashlightTool()),
@@ -57,6 +63,9 @@ class HomeScreen extends StatelessWidget {
         _Tool(Icons.timer_rounded, t.stopwatch, 8, () => const StopwatchTool()),
         _Tool(Icons.hourglass_bottom_rounded, t.timer, 9, () => const TimerTool()),
         _Tool(Icons.battery_full_rounded, t.battery, 2, () => const BatteryTool()),
+        _Tool(Icons.flip_camera_ios_rounded, t.mirror, 4, () => const MirrorTool()),
+        _Tool(Icons.qr_code_rounded, t.qrGenerator, 7, () => const QrGeneratorTool()),
+        _Tool(Icons.public_rounded, t.worldClock, 1, () => const WorldClockTool()),
       ]),
     ];
 

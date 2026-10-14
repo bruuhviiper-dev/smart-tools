@@ -55,6 +55,21 @@ class T {
   String get speedometer => _('Speedometer', 'عداد السرعة', 'स्पीडोमीटर', '速度计', 'Velocímetro', 'Velocímetro');
   String get battery => _('Battery Info', 'معلومات البطارية', 'बैटरी जानकारी', '电池信息', 'Bateria', 'Batería');
 
+  // --- Ferramentas novas (leva 1) ---
+  String get plumb => _('Plumb', 'شاقول', 'साहुल', '铅垂线', 'Prumo', 'Plomada');
+  String get altimeter => _('Altimeter', 'مقياس الارتفاع', 'ऊंचाई मापी', '高度计', 'Altímetro', 'Altímetro');
+  String get worldClock => _('World Clock', 'ساعة عالمية', 'विश्व घड़ी', '世界时钟', 'Relógio Mundial', 'Reloj Mundial');
+  String get qrGenerator => _('QR Generator', 'مولد QR', 'क्यूआर जनरेटर', '二维码生成器', 'Gerador de QR', 'Generador QR');
+  String get vertical => _('Vertical', 'عمودي', 'लंबवत', '垂直', 'Vertical', 'Vertical');
+  String get tilted => _('Tilted', 'مائل', 'झुका हुआ', '倾斜', 'Inclinado', 'Inclinado');
+  String get altitude => _('Altitude', 'الارتفاع', 'ऊंचाई', '海拔', 'Altitude', 'Altitud');
+  String get latitude => _('Latitude', 'خط العرض', 'अक्षांश', '纬度', 'Latitude', 'Latitud');
+  String get longitude => _('Longitude', 'خط الطول', 'देशांतर', '经度', 'Longitude', 'Longitud');
+  String get accuracy => _('Accuracy', 'الدقة', 'सटीकता', '精度', 'Precisão', 'Precisión');
+  String get speed => _('Speed', 'السرعة', 'गति', '速度', 'Velocidade', 'Velocidad');
+  String get qrGenHint => _('Type text or a link…', 'اكتب نصًا أو رابطًا…', 'टेक्स्ट या लिंक लिखें…', '输入文本或链接…', 'Digite um texto ou link…', 'Escribe un texto o enlace…');
+  String get qrGenReady => _('QR code ready — screenshot to save', 'رمز QR جاهز — التقط صورة للحفظ', 'क्यूआर तैयार — सेव करने के लिए स्क्रीनशॉट लें', '二维码已就绪，截图保存', 'QR pronto — tire um print para salvar', 'QR listo — haz una captura para guardar');
+
   // ---------------- Conversor: categorias ----------------
   String get convLength => _('Length', 'الطول', 'लंबाई', '长度', 'Comprimento', 'Longitud');
   String get convWeight => _('Weight', 'الوزن', 'वज़न', '重量', 'Peso', 'Peso');
