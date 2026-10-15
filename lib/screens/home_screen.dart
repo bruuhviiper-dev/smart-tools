@@ -23,7 +23,6 @@ import '../tools/level_tool.dart';
 import '../tools/magnifier_tool.dart';
 import '../tools/metal_detector_tool.dart';
 import '../tools/metronome_tool.dart';
-import '../tools/pedometer_tool.dart';
 import '../tools/plumb_tool.dart';
 import '../tools/protractor_tool.dart';
 import '../tools/qr_generator_tool.dart';
@@ -72,7 +71,6 @@ class HomeScreen extends StatelessWidget {
         _Tool(Icons.mosque_rounded, t.qibla, 5, () => const QiblaTool()),
         _Tool(Icons.speed_rounded, t.speedometer, 0, () => const SpeedometerTool()),
         _Tool(Icons.terrain_rounded, t.altimeter, 6, () => const AltimeterTool()),
-        _Tool(Icons.directions_walk_rounded, t.pedometer, 3, () => const PedometerTool()),
       ]),
       _Section(t.catEveryday, [
         _Tool(Icons.flashlight_on_rounded, t.flashlight, 0, () => const FlashlightTool()),
