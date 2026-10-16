@@ -29,18 +29,13 @@ class PurchaseService extends ChangeNotifier {
   bool get available => _products.isNotEmpty;
   ProductDetails? product(String id) => _products[id];
 
-  /// Preço formatado (fallback caso a loja ainda não respondeu).
+  /// Preço formatado. Sem preço localizado ainda (a loja não respondeu):
+  /// placeholder neutro, NUNCA uma moeda fixa. Atualiza sozinho quando a Play
+  /// responde (há listener no premium_screen).
   String priceOf(String id) {
     final p = _products[id];
     if (p != null) return p.price;
-    switch (id) {
-      case monthlyId:
-        return '\$1.99';
-      case yearlyId:
-        return '\$9.99';
-      default:
-        return '\$19.99';
-    }
+    return '…';
   }
 
   void onEntitlement(void Function(String id) cb) => _cb = cb;
